@@ -1,0 +1,69 @@
+.navMenu .socialMenu, .navMenu .normalMenu
+{
+	list-style-type: none;
+}
+.navMenu .socialMenu li
+{
+	display: block;
+	float: left;
+}
+.navMenu .normalMenu li
+{
+	display: block;
+	float: right;
+}
+.navMenu .socialMenu li a, .navMenu .normalMenu  li a
+{
+	font-size: 1.5em; 
+	text-decoration:none;
+	margin-right: 25px;
+	transition: color 0.5s ease;
+	color: #ded0d0;
+}
+.navMenu .socialMenu li a:hover, .navMenu .normalMenu  li a:hover
+{
+	color: #0006ff;
+}
+
+.projectsWrapper
+{
+	margin-top: 70px;
+}
+.projectsWrapper .projectList li
+{
+	display: block;
+	float: left;
+	width: 300px;
+	height: 400px;
+	margin-right: 45px;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+.projectsWrapper .projectList li span
+{
+	cursor:pointer;
+}
+.projectsWrapper .projectList li .wtMark h3
+{
+	/*position: relative;
+	bottom: 280px;*/
+	color: #ffffff;
+	transition: color 0.5s ease;
+	text-align: center;
+	font-size: 2.3em;
+	padding-top: 10px;
+}
+.projectsWrapper .projectList li .wtMark h3:hover
+{
+	color: #00fff6;
+}
+.projectsWrapper .projectList li .wtMark
+{
+	display: block;
+	position: relative;
+	bottom: 250px;
+	/*background-color: #4f4f4f ;*/
+	background: rgba(0, 0, 0, 0.6);
+	width: 280px;
+	height: 50px;
+}
