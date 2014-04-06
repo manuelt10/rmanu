@@ -1,10 +1,50 @@
 <?php 
 require_once('template/hea.php');
 ?>
+<script>
+	$(function() {
+	    $('.projectImage').click(function()
+	    {
+	    	$(this).removeClass('projectImage');
+	    	$('.projectImage').hide('slow');
+	    	$(this).addClass('projectImage');
+	    	$.ajax({
+	    		type : 'POST',
+	    		url : 'section/projectInfo.php',
+	    		data : {id : 1}
+	    	}).done(function(html)
+	    	{
+	    		$('.projectDetail').html(html);
+	    		$('.projectDetail').fadeIn('slow');
+	    	});
+	    	
+	    	
+	    });
+	    
+	    $('.projectDetail').on('click','.goBackPInfo', function()
+	    {
+	    	$('.projectDetail').fadeOut('slow');
+	    	$('.projectImage').show('slow');
+	    })
+	});
+</script>
 			<div class="container">
 				<div class="projectsWrapper">
 					<ul class="projectList">
-						<li style="background-color: #ff9292">
+						<li class="projectImage" style="background-color: #70ffb3">
+							<!--<a href="http://tumall.do/">-->
+							<span class="projectInfo">
+								<img src="images/cenapecvirtsite.jpg">
+							</span>
+							<!--</a>-->
+							<div class="wtMark">
+								<h3>
+									CENAPEC Moodle
+								</h3>
+							</div>
+							
+						</li>
+						<li class="projectImage" style="background-color: #ff9292">
 							<!--<a href="http://tumall.do/">-->
 							<span class="projectInfo">
 								<img src="images/tumallsite.jpg">
@@ -17,10 +57,13 @@ require_once('template/hea.php');
 							</div>
 							
 						</li>
-						<li style="background-color: #aafff2">
-							<a href="http://pekepolis.com/">
+						<li class="projectImage" style="background-color: #aafff2">
+							<span class="projectInfo">
 								<img src="images/pekesite.jpg">
-							</a>
+							</span>
+							<!--<a href="http://pekepolis.com/">
+								<img src="images/pekesite.jpg">
+							</a>-->
 							<div class="wtMark">
 								<h3>
 									Peképolis
@@ -28,10 +71,13 @@ require_once('template/hea.php');
 							</div>
 							
 						</li>
-						<li style="background-color: #ffcaf9"> 
-							<a href="http://www.dreamcher.com/home.php/">
+						<li class="projectImage" style="background-color: #ffcaf9"> 
+							<span class="projectInfo">
 								<img src="images/dreamsite.jpg">
-							</a>
+							</span>
+							<!--<a href="http://www.dreamcher.com/home.php/">
+								<img src="images/dreamsite.jpg">
+							</a>-->
 							<div class="wtMark">
 								<h3>
 									Dreamcher
@@ -40,6 +86,9 @@ require_once('template/hea.php');
 							
 						</li>
 					</ul>
+					<div class="projectDetail" style="display: none">
+						
+					</div>
 				</div>
 			</div>
 			
