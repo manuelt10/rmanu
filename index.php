@@ -1,9 +1,10 @@
 <?php 
+require_once('classes/mysqlManager.php');
 require_once('template/hea.php');
 ?>
 <script>
 	$(function() {
-	    $('.projectImage').click(function()
+	    /*$('.projectImage').click(function()
 	    {
 	    	$(this).removeClass('projectImage');
 	    	$('.projectImage').hide('slow');
@@ -25,18 +26,18 @@ require_once('template/hea.php');
 	    {
 	    	$('.projectDetail').fadeOut('slow');
 	    	$('.projectImage').show('slow');
-	    })
+	    })*/
 	});
 </script>
 			<div class="container">
 				<div class="projectsWrapper">
 					<ul class="projectList">
 						<li class="projectImage" style="background-color: #70ffb3">
-							<!--<a href="http://tumall.do/">-->
+							<a href="http://tumall.do/">
 							<span class="projectInfo">
 								<img src="images/cenapecvirtsite.jpg">
 							</span>
-							<!--</a>-->
+							</a>
 							<div class="wtMark">
 								<h3>
 									CENAPEC Moodle
@@ -45,11 +46,11 @@ require_once('template/hea.php');
 							
 						</li>
 						<li class="projectImage" style="background-color: #ff9292">
-							<!--<a href="http://tumall.do/">-->
+							<a href="http://tumall.do/">
 							<span class="projectInfo">
 								<img src="images/tumallsite.jpg">
 							</span>
-							<!--</a>-->
+							</a>
 							<div class="wtMark">
 								<h3>
 									TuMall
@@ -58,12 +59,11 @@ require_once('template/hea.php');
 							
 						</li>
 						<li class="projectImage" style="background-color: #aafff2">
+							<a href="http://pekepolis.com/">
 							<span class="projectInfo">
 								<img src="images/pekesite.jpg">
 							</span>
-							<!--<a href="http://pekepolis.com/">
-								<img src="images/pekesite.jpg">
-							</a>-->
+							</a>
 							<div class="wtMark">
 								<h3>
 									Peképolis
@@ -72,12 +72,11 @@ require_once('template/hea.php');
 							
 						</li>
 						<li class="projectImage" style="background-color: #ffcaf9"> 
+							<a href="http://www.dreamcher.com/home.php/">
 							<span class="projectInfo">
 								<img src="images/dreamsite.jpg">
 							</span>
-							<!--<a href="http://www.dreamcher.com/home.php/">
-								<img src="images/dreamsite.jpg">
-							</a>-->
+							</a>
 							<div class="wtMark">
 								<h3>
 									Dreamcher
