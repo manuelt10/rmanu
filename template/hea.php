@@ -32,9 +32,9 @@
 						</ul>
 						<!--<a href="#" class="fa fa-skype"></a>-->
 						<ul class="normalMenu">
-							<li><a href="#">Contact</a></li>
-							<li><a href="#">Projects</a></li>
-							<li><a href="#">Me</a></li>
+							<li><a href="contact.php">Contact</a></li>
+							<li><a href="index.php">Projects</a></li>
+							<li><a href="me.php">Me</a></li>
 						</ul>
 					</nav>
 				</div>

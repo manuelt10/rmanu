@@ -1,6 +1,8 @@
 <?php 
 require_once('classes/mysqlManager.php');
 require_once('template/hea.php');
+$db = new mysqlManager();
+$projects = $db->selectRecord('project', NULL, NULL, array('idproject' => 'desc'));
 ?>
 <script>
 	$(function() {
@@ -32,58 +34,25 @@ require_once('template/hea.php');
 			<div class="container">
 				<div class="projectsWrapper">
 					<ul class="projectList">
-						<li class="projectImage" style="background-color: #70ffb3">
-							<a href="http://tumall.do/">
-							<span class="projectInfo">
-								<img src="images/cenapecvirtsite.jpg">
-							</span>
-							</a>
-							<div class="wtMark">
-								<h3>
-									CENAPEC Moodle
-								</h3>
-							</div>
-							
-						</li>
-						<li class="projectImage" style="background-color: #ff9292">
-							<a href="http://tumall.do/">
-							<span class="projectInfo">
-								<img src="images/tumallsite.jpg">
-							</span>
-							</a>
-							<div class="wtMark">
-								<h3>
-									TuMall
-								</h3>
-							</div>
-							
-						</li>
-						<li class="projectImage" style="background-color: #aafff2">
-							<a href="http://pekepolis.com/">
-							<span class="projectInfo">
-								<img src="images/pekesite.jpg">
-							</span>
-							</a>
-							<div class="wtMark">
-								<h3>
-									Peképolis
-								</h3>
-							</div>
-							
-						</li>
-						<li class="projectImage" style="background-color: #ffcaf9"> 
-							<a href="http://www.dreamcher.com/home.php/">
-							<span class="projectInfo">
-								<img src="images/dreamsite.jpg">
-							</span>
-							</a>
-							<div class="wtMark">
-								<h3>
-									Dreamcher
-								</h3>
-							</div>
-							
-						</li>
+						<?php 
+						foreach($projects->data as $p)
+						{
+							?>
+							<li class="projectImage" style="background-color: <?php echo $p->color ?>">
+								<a href="<?php echo $p->href ?>" target="<?php echo $p->target ?>">
+								<span class="projectInfo">
+									<img src="images/<?php echo $p->image ?>">
+								</span>
+								</a>
+								<div class="wtMark">
+									<h3>
+										<?php echo $p->name ?>
+									</h3>
+								</div>
+							</li>
+							<?
+						}
+						?>
 					</ul>
 					<div class="projectDetail" style="display: none">
 						
