@@ -1,4 +1,8 @@
 <?php 
+session_start();
+$session = $_SESSION;
+unset($_SESSION["message"]);
+session_write_close();
 require_once('template/hea.php');
 $x = rand(1,15);
 $y = rand(1,15);
@@ -15,6 +19,7 @@ $y = rand(1,15);
 			<input type="text" name="y" value="<?php echo $y ?>" class="form-control mediuminput" readonly> <label>=</label> 
 			<input type="text" name="xy" required class="form-control mediuminput">
 		</div><br>
+		<?php echo !empty($session["message"]) ? '<strong style="color: RED">' . $session["message"] . '</strong><br>' : ""; ?>
 		<button type="submit" class="btn btn-success">Send</button>
 	</form>
 </div>
